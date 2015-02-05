@@ -1,0 +1,23 @@
+<h1>Post</h1>
+
+    {{model.id}}<br>
+    {{model.Titel}}
+    <hr>
+    <button {{action 'addComment' on="click"}}>Add Comment</button>
+    <hr>
+    Comments:<br>    
+    
+    <ul>
+    {{#each comment in model.comments}}
+      <li>
+        [{{model.constructor}} {{model.id}}] [{{comment.constructor}} {{comment.id}}]<br> 
+        Post Title: {{comment.post.title}}<br>
+        Comment Body: {{comment.name}}<br>
+        <button {{action 'removeComment' comment on="click"}}>Delete</button>
+      </li>
+    {{/each}}
+    </ul>
+    
+
+
+{{outlet}}
