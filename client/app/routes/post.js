@@ -15,8 +15,9 @@ export default Ember.Route.extend({
     addComment: function() {
       var post = this.controller.get('model');
       var commentBody = this.randomContent();
-      var comment = this.store.createRecord('comment', {body: commentBody} );
+      var comment = this.store.createRecord('comment');
       comment.set('post', post);
+      comment.set('body', commentBody);
       comment.save();
     },
 

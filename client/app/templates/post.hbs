@@ -12,7 +12,7 @@
       <li>
         [{{model.constructor}} {{model.id}}] [{{comment.constructor}} {{comment.id}}]<br> 
         Post Title: {{comment.post.title}}<br>
-        Comment Body: {{comment.name}}<br>
+        Comment Body: {{comment.body}}<br>
         <button {{action 'removeComment' comment on="click"}}>Delete</button>
       </li>
     {{/each}}
